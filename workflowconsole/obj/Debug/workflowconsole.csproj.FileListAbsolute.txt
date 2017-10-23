@@ -1,0 +1,13 @@
+C:\mygitspace\mywork\core\core\workflowconsole\bin\Debug\workflowconsole.exe.config
+C:\mygitspace\mywork\core\core\workflowconsole\bin\Debug\workflowconsole.exe
+C:\mygitspace\mywork\core\core\workflowconsole\bin\Debug\workflowconsole.pdb
+C:\mygitspace\mywork\core\core\workflowconsole\bin\Debug\EntityFramework.dll
+C:\mygitspace\mywork\core\core\workflowconsole\bin\Debug\EntityFramework.SqlServer.dll
+C:\mygitspace\mywork\core\core\workflowconsole\bin\Debug\Json.NET.Web.dll
+C:\mygitspace\mywork\core\core\workflowconsole\bin\Debug\Newtonsoft.Json.dll
+C:\mygitspace\mywork\core\core\workflowconsole\bin\Debug\EntityFramework.xml
+C:\mygitspace\mywork\core\core\workflowconsole\bin\Debug\EntityFramework.SqlServer.xml
+C:\mygitspace\mywork\core\core\workflowconsole\bin\Debug\Newtonsoft.Json.xml
+C:\mygitspace\mywork\core\core\workflowconsole\obj\Debug\workflowconsole.exe
+C:\mygitspace\mywork\core\core\workflowconsole\obj\Debug\workflowconsole.pdb
+C:\mygitspace\mywork\core\core\workflowconsole\obj\Debug\workflowconsole.csprojResolveAssemblyReference.cache

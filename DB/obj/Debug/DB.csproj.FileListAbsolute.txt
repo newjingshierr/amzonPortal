@@ -1,0 +1,7 @@
+C:\mygitspace\mywork\core\core\DB\bin\Debug\DB.dll.config
+C:\mygitspace\mywork\core\core\DB\bin\Debug\DB.dll
+C:\mygitspace\mywork\core\core\DB\bin\Debug\DB.pdb
+C:\mygitspace\mywork\core\core\DB\bin\Debug\MySql.Data.dll
+C:\mygitspace\mywork\core\core\DB\obj\Debug\DB.csprojResolveAssemblyReference.cache
+C:\mygitspace\mywork\core\core\DB\obj\Debug\DB.dll
+C:\mygitspace\mywork\core\core\DB\obj\Debug\DB.pdb

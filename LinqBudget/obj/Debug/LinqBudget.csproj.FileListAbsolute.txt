@@ -1,0 +1,6 @@
+C:\mygitspace\mywork\core\core\LinqBudget\bin\Debug\LinqBudget.exe.config
+C:\mygitspace\mywork\core\core\LinqBudget\bin\Debug\LinqBudget.exe
+C:\mygitspace\mywork\core\core\LinqBudget\bin\Debug\LinqBudget.pdb
+C:\mygitspace\mywork\core\core\LinqBudget\obj\Debug\LinqBudget.csprojResolveAssemblyReference.cache
+C:\mygitspace\mywork\core\core\LinqBudget\obj\Debug\LinqBudget.exe
+C:\mygitspace\mywork\core\core\LinqBudget\obj\Debug\LinqBudget.pdb

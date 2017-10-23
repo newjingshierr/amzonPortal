@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Product App</title>
+</head>
+<body>
+
+    <div>
+        <h2>All Products</h2>
+        <ul id="products" />
+    </div>
+    <div>
+        <h2>Search by ID</h2>
+        <input type="text" id="prodId" size="5" />
+        <input type="button" value="Search" onclick="PostProduct();" />
+        <p id="product" />
+    </div>
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script>
+
+        function PostProduct() {
+            var uri = "/api/news/Item";
+
+            var product = { coverImagePath: "11", title: 22, body: "22" };
+
+            $.ajax({
+                type: "Post",
+                url: uri,
+                data: product,
+                dataType: "json;",
+                success: function (data) {
+                    alert(data);  
+                }
+            });
+            //$.get(uri, function () {
+                 
+            //});
+        }
+
+    </script>
+</body>
+</html>
