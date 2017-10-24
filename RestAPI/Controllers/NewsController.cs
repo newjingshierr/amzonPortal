@@ -14,9 +14,9 @@ namespace RestAPI.Controllers
 
     public class addNewsRequest
     {
-        public string coverImagePath;
-        public string title;
-        public string body;
+        public string coverImagePath { get; set; }
+        public string title { get; set; }
+        public string body { get; set; }
     }
 
     public class Result
@@ -110,7 +110,7 @@ namespace RestAPI.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("Item")]
-        public bool Item([FromBody] addNewsRequest request)
+        public bool Item([FromBody] JObject request)
         {
             var dbresult = false;
 
@@ -119,9 +119,9 @@ namespace RestAPI.Controllers
 
                 am_news model = new am_news();
                 Random random = new Random();
-                model.imagePath = request.coverImagePath.ToString();
-                model.Title = request.title.ToString();
-                model.Content = request.body.ToString();
+                model.imagePath = request["coverImagePath"].ToString();
+                model.Title = request["title"].ToString();
+                model.Content = request["body"].ToString();
                 model.Type = "2";
                 model.PublishDate = System.DateTime.Now;
                 model.VisitCount = random.Next(1000, 5000);
@@ -170,9 +170,9 @@ namespace RestAPI.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("Item/delete")]
-        public bool delete([FromBody] deleteRequest request)
+        public bool delete([FromBody] JObject request)
         {
-            var ID = Convert.ToUInt32(request.id);
+            var ID = Convert.ToInt32(request["ID"]);
             using (AmAPIContent content = new AmAPIContent())
             {
 
@@ -190,13 +190,13 @@ namespace RestAPI.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("Items/delete")]
-        public bool deleteAll([FromBody] deleteRequestAll request)
+        public bool deleteAll([FromBody] JObject request)
         {
             using (AmAPIContent content = new AmAPIContent())
             {
-                foreach (var id in request.ids)
+                foreach (var id in request["IDList"])
                 {
-                    var result = content.Am_News.FirstOrDefault(o => o.ID == Convert.ToInt64(id));
+                    var result = content.Am_News.FirstOrDefault(o => o.ID == Convert.ToInt32(id));
                     content.Am_News.Remove(result);
                 }
 
