@@ -17,3 +17,4 @@ C:\mygitspace\mywork\core\core\SelfHostAPI\bin\Debug\System.Web.Http.SelfHost.xm
 C:\mygitspace\mywork\core\core\SelfHostAPI\bin\Debug\zh-Hans\System.Web.Http.SelfHost.resources.dll
 C:\mygitspace\mywork\core\core\SelfHostAPI\obj\Debug\SelfHostAPI.exe
 C:\mygitspace\mywork\core\core\SelfHostAPI\obj\Debug\SelfHostAPI.pdb
+C:\mygitspace\mywork\core\core\SelfHostAPI\obj\Debug\SelfHostAPI.csprojResolveAssemblyReference.cache

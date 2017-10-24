@@ -25,7 +25,8 @@ namespace RestAPI.Models
     public partial class am_news
     {
         [Key]
-        public long ID { get; set; }
+
+        public int ID { get; set; }
         public string Title { get; set; }
         public string imagePath { get; set; }
         public string Content { get; set; }

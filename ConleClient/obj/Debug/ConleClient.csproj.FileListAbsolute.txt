@@ -3,3 +3,4 @@ C:\mygitspace\mywork\core\core\ConleClient\bin\Debug\ConleClient.exe
 C:\mygitspace\mywork\core\core\ConleClient\bin\Debug\ConleClient.pdb
 C:\mygitspace\mywork\core\core\ConleClient\obj\Debug\ConleClient.exe
 C:\mygitspace\mywork\core\core\ConleClient\obj\Debug\ConleClient.pdb
+C:\mygitspace\mywork\core\core\ConleClient\obj\Debug\ConleClient.csprojResolveAssemblyReference.cache

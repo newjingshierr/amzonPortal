@@ -38,6 +38,12 @@ namespace RestAPI.Controllers
     [RoutePrefix("api/news")]
     public class NewsController : ApiController
     {
+        /// <summary>
+        /// 获取所有新闻信息
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("Items")]
         public Result Items(int index = 0, int pageSize = 5)
@@ -56,7 +62,11 @@ namespace RestAPI.Controllers
             }
 
         }
-
+        /// <summary>
+        /// 获取单个新闻信息
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("Item")]
         public am_news Item(string ID)
@@ -71,8 +81,13 @@ namespace RestAPI.Controllers
             }
 
         }
-        [HttpPut]
-        [Route("Item")]
+        /// <summary>
+        /// 新增修改
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("Item/Modify")]
         public bool ItemModify([FromBody] JObject request)
         {
             var ID = Convert.ToInt64(request["ID"]);
@@ -88,20 +103,25 @@ namespace RestAPI.Controllers
             return false;
         }
 
+        /// <summary>
+        /// 新闻新增
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Item")]
-        public bool Item([FromBody] JObject request)
+        public bool Item([FromBody] addNewsRequest request)
         {
-            var dbresult = true;
+            var dbresult = false;
 
             using (AmAPIContent content = new AmAPIContent())
             {
 
                 am_news model = new am_news();
                 Random random = new Random();
-                model.imagePath = request["coverImagePath"].ToString();
-                model.Title = request["title"].ToString();
-                model.Content = request["body"].ToString();
+                model.imagePath = request.coverImagePath.ToString();
+                model.Title = request.title.ToString();
+                model.Content = request.body.ToString();
                 model.Type = "2";
                 model.PublishDate = System.DateTime.Now;
                 model.VisitCount = random.Next(1000, 5000);
@@ -110,12 +130,15 @@ namespace RestAPI.Controllers
                 model.ModifiedBy = "亚马逊探险乐园";
                 model.Modified = System.DateTime.Now;
                 var result = content.Am_News.Add(model);
-                content.SaveChanges();
+                return content.SaveChanges() > 0;
             }
 
             return dbresult;
         }
-
+        /// <summary>
+        /// 图片上传
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         [Route("Item/upload")]
         public string postfile()
@@ -140,12 +163,16 @@ namespace RestAPI.Controllers
             return filePath;
 
         }
-
-        [HttpDelete]
+        /// <summary>
+        /// 单个新闻删除
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost]
         [Route("Item/delete")]
-        public bool delete([FromBody] JObject request)
+        public bool delete([FromBody] deleteRequest request)
         {
-            var ID = Convert.ToInt64(request["ID"]);
+            var ID = Convert.ToUInt32(request.id);
             using (AmAPIContent content = new AmAPIContent())
             {
 
@@ -156,8 +183,12 @@ namespace RestAPI.Controllers
 
             return false;
         }
-
-        [HttpDelete]
+        /// <summary>
+        /// 批量删除新闻
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost]
         [Route("Items/delete")]
         public bool deleteAll([FromBody] deleteRequestAll request)
         {

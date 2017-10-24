@@ -4,5 +4,54 @@
         <name>RestAPI</name>
     </assembly>
     <members>
+        <member name="M:RestAPI.Controllers.NewsController.Items(System.Int32,System.Int32)">
+            <summary>
+            获取所有新闻信息
+            </summary>
+            <param name="index"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestAPI.Controllers.NewsController.Item(System.String)">
+            <summary>
+            获取单个新闻信息
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestAPI.Controllers.NewsController.ItemModify(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            新增修改
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestAPI.Controllers.NewsController.Item(RestAPI.Controllers.addNewsRequest)">
+            <summary>
+            新闻新增
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestAPI.Controllers.NewsController.postfile">
+            <summary>
+            图片上传
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RestAPI.Controllers.NewsController.delete(RestAPI.Controllers.deleteRequest)">
+            <summary>
+            单个新闻删除
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestAPI.Controllers.NewsController.deleteAll(RestAPI.Controllers.deleteRequestAll)">
+            <summary>
+            批量删除新闻
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
