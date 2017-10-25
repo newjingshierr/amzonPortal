@@ -149,8 +149,8 @@ namespace RestAPI.Controllers
             if (httpRequest.Files.Count > 0)
             {
                 var postedFile = httpRequest.Files[0];
-                filePath = HttpContext.Current.Server.MapPath("~/" + postedFile.FileName);
-                postedFile.SaveAs(filePath);
+                filePath = "/Upload/" + postedFile.FileName;
+                postedFile.SaveAs(HttpContext.Current.Server.MapPath("~" + filePath));
             }
 
             return filePath;
