@@ -136,7 +136,7 @@ namespace RestAPI.Controllers
             return dbresult;
         }
         /// <summary>
-        /// 图片上传
+        /// 单图片上传
         /// </summary>
         /// <returns></returns>
         [HttpPost]
@@ -148,20 +148,12 @@ namespace RestAPI.Controllers
             var filePath = "";
             if (httpRequest.Files.Count > 0)
             {
-                var docfiles = new List<string>();
-                foreach (string file in httpRequest.Files)
-                {
-                    var postedFile = httpRequest.Files[file];
-                    filePath = HttpContext.Current.Server.MapPath("~/" + postedFile.FileName);
-                    postedFile.SaveAs(filePath);
-
-                    docfiles.Add(filePath);
-                }
-
+                var postedFile = httpRequest.Files[0];
+                filePath = HttpContext.Current.Server.MapPath("~/" + postedFile.FileName);
+                postedFile.SaveAs(filePath);
             }
 
             return filePath;
-
         }
         /// <summary>
         /// 单个新闻删除
