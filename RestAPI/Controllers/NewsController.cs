@@ -14,7 +14,7 @@ namespace RestAPI.Controllers
 
     public class addNewsRequest
     {
-        public string coverImagePath { get; set; }
+        public string imagePath { get; set; }
         public string title { get; set; }
         public string body { get; set; }
     }
@@ -97,7 +97,7 @@ namespace RestAPI.Controllers
                 var result = content.Am_News.FirstOrDefault(o => o.ID == ID);
                 result.Title = request["title"].ToString();
                 result.Content = request["body"].ToString();
-                result.imagePath = request["coverImagePath"].ToString();
+                result.imagePath = request["imagePath"].ToString();
                 return content.SaveChanges() > 0;
             }
             return false;
@@ -119,7 +119,7 @@ namespace RestAPI.Controllers
 
                 am_news model = new am_news();
                 Random random = new Random();
-                model.imagePath = request["coverImagePath"].ToString();
+                model.imagePath = request["imagePath"].ToString();
                 model.Title = request["title"].ToString();
                 model.Content = request["body"].ToString();
                 model.Type = "2";
